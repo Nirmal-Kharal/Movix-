@@ -9,6 +9,7 @@ import { PiBellRingingFill } from "react-icons/pi"
 import { FaFire } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Sidebar = () => {
+
   return (
     <div className="w-[20%] h-full border-r-2 border-zinc-400 p-10 ">
 <h1 className="text-white text-3xl font-bold flex items-center gap-1">
