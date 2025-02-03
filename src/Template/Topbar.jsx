@@ -1,6 +1,7 @@
 import axios from "../utils/axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import noimage from "/no-image.png"
 
 const Topbar = () => {
   const [query, setQuery] = useState("")
@@ -32,7 +33,8 @@ const Topbar = () => {
       <div className="w-1/2 bg-zinc-200 max-h-[50vh] absolute top-[10%] overflow-auto ">
       {searches&&searches.map((s,i)=>(
          <Link key={i} className="font-medium text-zinc-700 hover:text-black hover:bg-zinc-400 duration-200 flex justify-start items-center border-b-2 border-zinc-100 p-10 object-cover" >
-         <img src={`https://image.tmdb.org/t/p/original${s.backdrop_path || s.profile_path || s.poster_path}`} className="w-[10vh] object-cover h-[15vh] rounded-md" alt="" />
+         <img 
+         src={s.backdrop_path || s.profile_path || s.poster_path ? `https://image.tmdb.org/t/p/original?${s.backdrop_path || s.profile_path || s.poster_path}` : noimage} className="w-[10vh] object-cover h-[15vh] rounded-md" alt="" />
 
          <span>{s.original_title || s.title ||s.name}</span>
          </Link> 
